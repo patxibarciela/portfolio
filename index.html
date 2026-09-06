@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Startsida | Patxi Barciela</title>
+<meta name="description" content="Personlig portfolio-hemsida — kommunikation, design & pedagogik." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          accent: { DEFAULT: "#0f7d8f", dark: "#0b616f", light: "#e6f3f4" },
+          ink: "#1f2328"
+        },
+        fontFamily: { sans: ["Inter", "ui-sans-serif", "system-ui", "sans-serif"] }
+      }
+    }
+  };
+</script>
+
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="bg-white text-ink antialiased">
+
+<header id="site-header" class="border-b border-gray-100 sticky top-0 bg-white/95 backdrop-blur z-50"></header>
+
+<!-- ==================== HERO ==================== -->
+<section class="max-w-6xl mx-auto px-6 pt-24 pb-20 grid md:grid-cols-2 gap-14 items-center">
+  <div>
+    <p class="text-accent text-sm font-semibold uppercase tracking-widest mb-4">Kommunikation, Design &amp; Pedagogik</p>
+    <h1 class="text-4xl md:text-5xl font-semibold leading-tight mb-6">
+      Välkommen till min<br class="hidden md:block" /> online-portfolio
+    </h1>
+    <p class="text-gray-500 text-lg leading-relaxed max-w-lg">
+      Hej! Jag är SFI-lärare med en gedigen bakgrund inom kommunikation och design. Här samlar jag några av
+      mina tidigare projekt medan jag vidareutbildar mig till Digital innehållsproducent – upptäck min resa!
+    </p>
+    <div class="mt-8 flex gap-4">
+      <a href="om-mig.html" class="inline-block bg-accent text-white px-6 py-3 text-sm font-medium tracking-wide hover:bg-accent-dark transition-colors">
+        Mer om mig
+      </a>
+    </div>
+  </div>
+  <div id="hero-carousel" class="relative aspect-[4/3] bg-accent-light overflow-hidden">
+    <img id="hero-carousel-img" src="" alt="Utvalt projekt" class="w-full h-full object-cover transition-opacity duration-700 opacity-0" />
+  </div>
+</section>
+
+<!-- ==================== KATEGORIER ==================== -->
+<section class="max-w-6xl mx-auto px-6 pb-24">
+  <h2 class="text-sm uppercase tracking-widest text-gray-400 mb-8">Utforska portfolion</h2>
+  <div class="grid md:grid-cols-2 gap-8">
+
+    <a href="print.html" class="group relative overflow-hidden block border border-gray-100">
+      <img src="assets/categories/print.jpg" alt="Print" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105" />
+      <div class="absolute inset-0 bg-ink/40 group-hover:bg-ink/55 transition-colors flex flex-col justify-end p-8">
+        <h3 class="text-white text-2xl font-semibold mb-1">Print</h3>
+        <p class="text-white/80 text-sm">Visuell identitet, broschyrer och kampanjer</p>
+      </div>
+    </a>
+
+    <a href="webbdesign.html" class="group relative overflow-hidden block border border-gray-100">
+      <img src="assets/categories/webbdesign.jpg" alt="Webbdesign" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105" />
+      <div class="absolute inset-0 bg-ink/50 group-hover:bg-ink/65 transition-colors flex flex-col justify-end p-8">
+        <h3 class="text-white text-2xl font-semibold mb-1">Webbdesign</h3>
+        <p class="text-white/80 text-sm">Webbplatser och digitala gränssnitt</p>
+      </div>
+    </a>
+
+    <a href="content-management.html" class="group relative overflow-hidden block border border-gray-100">
+      <img src="assets/categories/content-management.jpg" alt="Content Management" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105" />
+      <div class="absolute inset-0 bg-ink/40 group-hover:bg-ink/55 transition-colors flex flex-col justify-end p-8">
+        <h3 class="text-white text-2xl font-semibold mb-1">Content Management</h3>
+        <p class="text-white/80 text-sm">Informationsarkitektur och innehållsledning</p>
+      </div>
+    </a>
+
+    <a href="audiovisuellt.html" class="group relative overflow-hidden block border border-gray-100">
+      <img src="assets/categories/audiovisuellt.jpg" alt="Audiovisuellt" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105" />
+      <div class="absolute inset-0 bg-ink/40 group-hover:bg-ink/55 transition-colors flex flex-col justify-end p-8">
+        <h3 class="text-white text-2xl font-semibold mb-1">Audiovisuellt</h3>
+        <p class="text-white/80 text-sm">TV-spots och annan rörlig media</p>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<footer id="site-footer" class="border-t border-gray-100 py-10"></footer>
+
+<script src="js/layout.js"></script>
+<script src="js/main.js"></script>
+<script src="js/hero-images.js"></script>
+<script src="js/hero-carousel.js"></script>
+</body>
+</html>
