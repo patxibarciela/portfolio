@@ -27,17 +27,37 @@ function initTestimonialsCarousel() {
     return;
 
   let currentIndex = 0;
+  let autoplayTimer = null;
+  const intervalMs = 10000;
+
+  const goTo = (index) => {
+    currentIndex = index;
+    renderTestimonial(currentIndex);
+  };
+
+  const startAutoplay = () => {
+    if (TESTIMONIALS.length <= 1) return; // Nada que rotar con un solo testimonio
+    autoplayTimer = setInterval(() => {
+      goTo((currentIndex + 1) % TESTIMONIALS.length);
+    }, intervalMs);
+  };
+
+  const resetAutoplay = () => {
+    clearInterval(autoplayTimer);
+    startAutoplay();
+  };
+
   renderTestimonial(currentIndex);
+  startAutoplay();
 
   prevBtn.addEventListener("click", () => {
-    currentIndex =
-      (currentIndex - 1 + TESTIMONIALS.length) % TESTIMONIALS.length;
-    renderTestimonial(currentIndex);
+    goTo((currentIndex - 1 + TESTIMONIALS.length) % TESTIMONIALS.length);
+    resetAutoplay();
   });
 
   nextBtn.addEventListener("click", () => {
-    currentIndex = (currentIndex + 1) % TESTIMONIALS.length;
-    renderTestimonial(currentIndex);
+    goTo((currentIndex + 1) % TESTIMONIALS.length);
+    resetAutoplay();
   });
 }
 
