@@ -8,7 +8,7 @@ function renderTestimonial(index) {
 
   quoteEl.classList.add("opacity-0");
   setTimeout(() => {
-    quoteEl.textContent = `"${item.quote}"`;
+    quoteEl.textContent = `${item.quote}"`;
     nameEl.textContent = item.name;
     roleEl.textContent = item.role;
     quoteEl.classList.remove("opacity-0");
@@ -18,13 +18,20 @@ function renderTestimonial(index) {
 function initTestimonialsCarousel() {
   const prevBtn = document.getElementById("testimonial-prev");
   const nextBtn = document.getElementById("testimonial-next");
-  if (!prevBtn || !nextBtn || typeof TESTIMONIALS === "undefined" || TESTIMONIALS.length === 0) return;
+  if (
+    !prevBtn ||
+    !nextBtn ||
+    typeof TESTIMONIALS === "undefined" ||
+    TESTIMONIALS.length === 0
+  )
+    return;
 
   let currentIndex = 0;
   renderTestimonial(currentIndex);
 
   prevBtn.addEventListener("click", () => {
-    currentIndex = (currentIndex - 1 + TESTIMONIALS.length) % TESTIMONIALS.length;
+    currentIndex =
+      (currentIndex - 1 + TESTIMONIALS.length) % TESTIMONIALS.length;
     renderTestimonial(currentIndex);
   });
 
