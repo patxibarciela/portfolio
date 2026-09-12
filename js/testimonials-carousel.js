@@ -12,23 +12,17 @@ function renderTestimonial(index) {
     nameEl.textContent = item.name;
     roleEl.textContent = item.role;
     quoteEl.classList.remove("opacity-0");
-  }, 200);
+  }, 400);
 }
 
 function initTestimonialsCarousel() {
   const prevBtn = document.getElementById("testimonial-prev");
   const nextBtn = document.getElementById("testimonial-next");
-  if (
-    !prevBtn ||
-    !nextBtn ||
-    typeof TESTIMONIALS === "undefined" ||
-    TESTIMONIALS.length === 0
-  )
-    return;
+  if (!prevBtn || !nextBtn || typeof TESTIMONIALS === "undefined" || TESTIMONIALS.length === 0) return;
 
   let currentIndex = 0;
   let autoplayTimer = null;
-  const intervalMs = 10000;
+  const intervalMs = 15000;
 
   const goTo = (index) => {
     currentIndex = index;
